@@ -83,7 +83,7 @@ PRE_CHECK() {
 
 VERSION_CHECK() {
 	yellowMessage "Checking for manager script updates"
-	LATEST_MANAGER_VERSION=`wget -q --timeout=60 -O - https://api.github.com/repos/Lacrimosa99/Easy-WI-ARMA3-Mod-Manager/releases/latest | grep -Po '(?<="tag_name": ")([0-9]\.[0-9]\.[0-9])'`
+	LATEST_MANAGER_VERSION=`wget -q --timeout=60 -O - https://api.github.com/repos/ino89/Arma3-mod-updater-linux/releases/latest | grep -Po '(?<="tag_name": ")([0-9]\.[0-9]\.[0-9])'`
 	sleep 3
 
 	if [ "$LATEST_MANAGER_VERSION" != "" ]; then
@@ -105,7 +105,7 @@ VERSION_CHECK() {
 
 UPDATER_CHECK() {
 	yellowMessage "Checking for latest updater script"
-	LATEST_UPDATER_VERSION=`wget -q --timeout=60 -O - https://api.github.com/repos/Lacrimosa99/Easy-WI-ARMA3-Mod-Updater/releases/latest | grep -Po '(?<="tag_name": ")([0-9]\.[0-9])'`
+	LATEST_UPDATER_VERSION=`wget -q --timeout=60 -O - https://api.github.com/repos/ino89/Arma3-mod-updater-linux/releases/latest | grep -Po '(?<="tag_name": ")([0-9]\.[0-9])'`
 	sleep 3
 
 	if [ "$LATEST_UPDATER_VERSION" != "" ]; then
@@ -130,7 +130,7 @@ UPDATER_CHECK() {
 				echo
 			else
 				redMessage "Downloading updater script failed"
-				redMessage "Please download the last release from https://github.com/Lacrimosa99/Easy-WI-ARMA3-Mod-Updater/releases"
+				redMessage "Please download the last release from https://github.com/ino89/Arma3-mod-updater-linux"
 				redMessage "Installation canceled!"
 				FINISHED
 			fi
